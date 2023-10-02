@@ -4,7 +4,7 @@ const nextConfig = {
     {
       source: "/",
       destination: "/rustdoc/example_rustdoc_vercel_with_auth/index.html",
-      permanent: true,
+      permanent: false,
     },
   ],
 };
