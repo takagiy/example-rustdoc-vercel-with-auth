@@ -1,11 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  rewrites: async () => [
-    {
-      source: "/:path*",
-      destination: "/rustdoc/:path*",
-    },
-  ],
   redirects: async () => [
     {
       source: "/",
