@@ -1,13 +1,6 @@
 import NextAuth from "next-auth";
-import GitHubProvider from "next-auth/providers/github";
 import Auth0Provider from "next-auth/providers/auth0";
 
-if (!process.env.GITHUB_CLIENT_ID) {
-  throw new Error("GITHUB_CLIENT_ID is not set");
-}
-if (!process.env.GITHUB_CLIENT_SECRET) {
-  throw new Error("GITHUB_CLIENT_SECRET is not set");
-}
 if (!process.env.AUTH0_CLIENT_ID) {
   throw new Error("AUTH0_CLIENT_ID is not set");
 }
@@ -24,10 +17,6 @@ const handler = NextAuth({
       clientId: process.env.AUTH0_CLIENT_ID,
       clientSecret: process.env.AUTH0_CLIENT_SECRET,
       issuer: process.env.AUTH0_ISSUER,
-    }),
-    GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
   ],
   callbacks: {
