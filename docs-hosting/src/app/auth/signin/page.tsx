@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 
-export default async function Page() {
+function SignIn() {
   const searchParams = useSearchParams();
 
   let callbackUrl = searchParams.get("callbackUrl") || "/";
@@ -17,4 +17,12 @@ export default async function Page() {
   }, [callbackUrl]);
 
   return <></>;
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<></>}>
+      <SignIn />
+    </Suspense>
+  );
 }
