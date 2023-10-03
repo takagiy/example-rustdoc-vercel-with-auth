@@ -16,5 +16,5 @@ export function SignIn() {
     signIn("auth0", { callbackUrl });
   }, [callbackUrl]);
 
-  return <></>;
+  return <p>loading…</p>;
 }
