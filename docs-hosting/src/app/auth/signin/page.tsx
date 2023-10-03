@@ -1,27 +1,14 @@
-"use client";
+import { Suspense } from "react";
+import { SignIn } from "./signin";
+import { Metadata } from "next";
 
-import { Suspense, useEffect } from "react";
-import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
-
-function SignIn() {
-  const searchParams = useSearchParams();
-
-  let callbackUrl = searchParams.get("callbackUrl") || "/";
-  if (!callbackUrl.startsWith("/")) {
-    callbackUrl = "/";
-  }
-
-  useEffect(() => {
-    signIn("auth0", { callbackUrl });
-  }, [callbackUrl]);
-
-  return <></>;
-}
+export const metadata: Metadata = {
+  title: "Sign In",
+};
 
 export default function Page() {
   return (
-    <Suspense fallback={<></>}>
+    <Suspense fallback={<p>loading…</p>}>
       <SignIn />
     </Suspense>
   );
