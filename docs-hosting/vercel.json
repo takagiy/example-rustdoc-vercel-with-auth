@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs",
+  "installCommand": "./vercel-install-command.sh",
+  "buildCommand": "./vercel-build-command.sh",
+  "public": false
+}
