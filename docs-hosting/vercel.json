@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs",
+  "installCommand": "./vercel-install-command.sh",
+  "buildCommand": "export PATH=\"$CARGO_HOME/bin:$PATH\" && npm run build",
+  "public": false
+}
