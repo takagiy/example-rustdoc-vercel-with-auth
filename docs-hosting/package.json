@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build:rustdoc && npm run build:next",
+    "build": "whoami && npm run build:rustdoc && npm run build:next",
     "build:next": "next build",
     "build:rustdoc": "cargo doc --no-deps --document-private-items --all-features && mkdir -p public/rustdoc && cp -r ../target/doc/* public/rustdoc",
     "start": "next start",
